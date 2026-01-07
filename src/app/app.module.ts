@@ -7,6 +7,7 @@ import {AppComponent} from './app.component';
 import {XxxAlertModule, XxxErrorHandlerModule, XxxLogModule, XxxMessageModule} from '@app/xxx-common';
 import {XxxHeaderModule} from '@app/modules/xxx-header/xxx-header.module';
 import {XxxCommentsModule} from '@app/modules/xxx-comments/xxx-comments.module';
+import {XxxUsersModule} from '@app/modules/xxx-users/xxx-users.module';
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -20,7 +21,8 @@ import {XxxCommentsModule} from '@app/modules/xxx-comments/xxx-comments.module';
     XxxErrorHandlerModule,
     XxxHeaderModule,
     XxxLogModule,
-    XxxMessageModule
+    XxxMessageModule,
+    XxxUsersModule
   ]
 })
 

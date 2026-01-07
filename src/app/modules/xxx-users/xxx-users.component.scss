@@ -1,0 +1,48 @@
+@import "partials/colors";
+@import "partials/page";
+
+.xxx-column-city {
+  width: 200px;
+}
+
+.xxx-column-email {
+  width: 240px;
+}
+
+.xxx-column-id {
+  width: 40px;
+}
+
+.xxx-column-name {
+  width: 260px;
+}
+
+.xxx-user-container {
+  border-bottom: 1px solid lightskyblue;
+  height: 16px;
+  padding: 4px;
+}
+
+.xxx-user-container div {
+  display: inline-block;
+}
+
+.xxx-users-container {
+  background-color: $bg-color-container;
+  height: 400px;
+  margin-bottom: 32px;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.xxx-users-header {
+  background-color: gainsboro;
+  border-bottom: 2px solid darkgray;
+  font-weight: bold;
+  padding: 4px;
+  padding-top: 8px;
+}
+
+.xxx-users-header div {
+  display: inline-block;
+}

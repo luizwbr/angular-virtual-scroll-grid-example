@@ -1,0 +1,24 @@
+<div class="xxx-page">
+  <div class="xxx-page-title">Users</div>
+  <div class="xxx-main-card">
+    <div *ngIf="isLoading" class="xxx-spinner-container">
+      <mat-spinner></mat-spinner>
+    </div>
+    <div *ngIf="!isLoading&&!isError&&isResult" class="xxx-users-container">
+      <div class="xxx-users-header">
+        <div class="xxx-column-id">Id</div>
+        <div class="xxx-column-name">Name</div>
+        <div class="xxx-column-email">Email</div>
+        <div class="xxx-column-city">City</div>
+      </div>
+      <cdk-virtual-scroll-viewport class="xxx-users-container" itemSize="16">
+        <div *cdkVirtualFor="let user of users" class="xxx-user-container">
+          <div class="xxx-column-id">{{user.id}}</div>
+          <div class="xxx-column-name">{{user.name}}</div>
+          <div class="xxx-column-email">{{user.email}}</div>
+          <div class="xxx-column-city">{{user.address?.city}}</div>
+        </div>
+      </cdk-virtual-scroll-viewport>
+    </div>
+  </div>
+</div>
