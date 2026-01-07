@@ -18,6 +18,7 @@ Click for running example:
 ## Table of Contents
 - [About The Author](#about-the-author)
 - [Purpose Of This Project](#purpose-of-this-project)
+- [Design Patterns Examples](#design-patterns-examples)
 - [Project Setup](#project-setup)
   * [Prerequisites](#prerequisites)
   * [How To Install](#how-to-install)
@@ -50,6 +51,25 @@ Virtual scrolling improves the performance for the display of lists (or tables o
 This requires Angular Material 7 or newer. Angular CDK is required, which is part of Angular Material.
 
 This project is written in Angular 9.
+
+## Design Patterns Examples
+
+This project now includes comprehensive examples of 10 common design patterns implemented in Angular:
+
+1. **Singleton Pattern** - Angular services as singletons
+2. **Observer Pattern** - RxJS Observables for reactive programming
+3. **Factory Pattern** - Creating objects based on parameters
+4. **Strategy Pattern** - Interchangeable algorithms
+5. **Decorator Pattern** - Custom TypeScript decorators
+6. **Facade Pattern** - Simplified interface to complex subsystems
+7. **Command Pattern** - Undo/redo functionality
+8. **Adapter Pattern** - Interface compatibility
+9. **Builder Pattern** - Step-by-step object construction
+10. **Proxy Pattern** - Caching and access control
+
+All patterns are fully documented with working examples, unit tests, and detailed explanations.
+
+See [Design Patterns README](src/app/modules/design-patterns/README.md) for complete documentation.
 
 ## Project Setup
 
