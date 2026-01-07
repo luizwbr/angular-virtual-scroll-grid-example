@@ -25,6 +25,7 @@ export class DesignPatternsComponent implements OnInit, OnDestroy {
   // Observer
   observerData: string[] = [];
   private observerSubscription: Subscription;
+  private observerTimeouts: number[] = [];
 
   // Factory
   factoryResults: string[] = [];
@@ -49,6 +50,7 @@ export class DesignPatternsComponent implements OnInit, OnDestroy {
 
   // Proxy
   proxyResults: string[] = [];
+  private proxyTimeouts: number[] = [];
 
   constructor(
     private singletonService: SingletonExampleService,
@@ -79,6 +81,8 @@ export class DesignPatternsComponent implements OnInit, OnDestroy {
     if (this.observerSubscription) {
       this.observerSubscription.unsubscribe();
     }
+    this.observerTimeouts.forEach(timeoutId => clearTimeout(timeoutId));
+    this.proxyTimeouts.forEach(timeoutId => clearTimeout(timeoutId));
   }
 
   demonstrateSingleton(): void {
@@ -91,9 +95,9 @@ export class DesignPatternsComponent implements OnInit, OnDestroy {
       this.observerData.push(data);
     });
 
-    setTimeout(() => this.observerService.updateData('First update'), 100);
-    setTimeout(() => this.observerService.updateData('Second update'), 200);
-    setTimeout(() => this.observerService.updateData('Third update'), 300);
+    this.observerTimeouts.push(window.setTimeout(() => this.observerService.updateData('First update'), 100));
+    this.observerTimeouts.push(window.setTimeout(() => this.observerService.updateData('Second update'), 200));
+    this.observerTimeouts.push(window.setTimeout(() => this.observerService.updateData('Third update'), 300));
   }
 
   demonstrateFactory(): void {
@@ -164,13 +168,13 @@ export class DesignPatternsComponent implements OnInit, OnDestroy {
     this.proxyResults.push('First call: ' + this.cachingProxy.getData());
 
     // Second call - returns cached data
-    setTimeout(() => {
+    this.proxyTimeouts.push(window.setTimeout(() => {
       this.proxyResults.push('Second call (cached): ' + this.cachingProxy.getData());
-    }, 1000);
+    }, 1000));
 
     // Third call after cache expires - fetches fresh data
-    setTimeout(() => {
+    this.proxyTimeouts.push(window.setTimeout(() => {
       this.proxyResults.push('Third call (after 6s): ' + this.cachingProxy.getData());
-    }, 6000);
+    }, 6000));
   }
 }

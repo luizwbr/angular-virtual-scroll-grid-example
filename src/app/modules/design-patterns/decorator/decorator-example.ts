@@ -7,20 +7,20 @@
 
 // Method decorator to log execution time
 export function LogExecutionTime() {
-  return function (
+  return function <T>(
     target: any,
     propertyKey: string,
-    descriptor: PropertyDescriptor
+    descriptor: TypedPropertyDescriptor<T>
   ) {
-    const originalMethod = descriptor.value;
+    const originalMethod = descriptor.value as any;
 
-    descriptor.value = function (...args: any[]) {
+    descriptor.value = function (this: any, ...args: unknown[]) {
       const start = performance.now();
       const result = originalMethod.apply(this, args);
       const end = performance.now();
       console.log(`${propertyKey} executed in ${end - start}ms`);
       return result;
-    };
+    } as any;
 
     return descriptor;
   };

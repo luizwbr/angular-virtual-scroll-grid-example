@@ -14,7 +14,7 @@ export class SingletonExampleService {
   private counter = 0;
 
   constructor() {
-    this.instanceId = Math.random().toString(36).substr(2, 9);
+    this.instanceId = Math.random().toString(36).substring(2, 11);
     console.log('SingletonExampleService instance created with ID:', this.instanceId);
   }
 
