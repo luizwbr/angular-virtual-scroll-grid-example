@@ -1,0 +1,113 @@
+<div class="design-patterns-container">
+  <h1>Angular Design Patterns Examples</h1>
+  
+  <div class="pattern-section">
+    <h2>1. Singleton Pattern</h2>
+    <p class="description">
+      Services with <code>providedIn: 'root'</code> are singletons.
+      Only one instance exists throughout the application.
+    </p>
+    <div class="result">
+      <p><strong>Instance ID:</strong> {{ singletonInstanceId }}</p>
+      <p><strong>Counter:</strong> {{ singletonCounter }}</p>
+    </div>
+  </div>
+
+  <div class="pattern-section">
+    <h2>2. Observer Pattern</h2>
+    <p class="description">
+      Uses RxJS Observables to notify subscribers of data changes.
+    </p>
+    <div class="result">
+      <p><strong>Received updates:</strong></p>
+      <ul>
+        <li *ngFor="let data of observerData">{{ data }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="pattern-section">
+    <h2>3. Factory Pattern</h2>
+    <p class="description">
+      Creates different object types based on input parameters.
+    </p>
+    <div class="result">
+      <p *ngFor="let result of factoryResults">{{ result }}</p>
+    </div>
+  </div>
+
+  <div class="pattern-section">
+    <h2>4. Strategy Pattern</h2>
+    <p class="description">
+      Defines interchangeable algorithms that can be selected at runtime.
+    </p>
+    <div class="result">
+      <p *ngFor="let result of strategyResults">{{ result }}</p>
+    </div>
+  </div>
+
+  <div class="pattern-section">
+    <h2>5. Decorator Pattern</h2>
+    <p class="description">
+      Angular uses decorators extensively (@Component, @Injectable, etc.).
+      Custom decorators can add functionality to classes and methods.
+    </p>
+    <div class="result">
+      <p><strong>Calculation result:</strong> {{ decoratorResult }}</p>
+      <p class="note">Check browser console for execution time log</p>
+    </div>
+  </div>
+
+  <div class="pattern-section">
+    <h2>6. Facade Pattern</h2>
+    <p class="description">
+      Provides a simplified interface to complex subsystems.
+    </p>
+    <div class="result">
+      <p>{{ facadeResult }}</p>
+      <p class="note">Check browser console for detailed logs</p>
+    </div>
+  </div>
+
+  <div class="pattern-section">
+    <h2>7. Command Pattern</h2>
+    <p class="description">
+      Encapsulates requests as objects, enabling undo/redo functionality.
+    </p>
+    <div class="result">
+      <p *ngFor="let log of commandLogs">{{ log }}</p>
+      <p class="note">Check browser console for command execution logs</p>
+    </div>
+  </div>
+
+  <div class="pattern-section">
+    <h2>8. Adapter Pattern</h2>
+    <p class="description">
+      Converts one interface to another, making incompatible interfaces work together.
+    </p>
+    <div class="result">
+      <p>{{ adapterResult }}</p>
+    </div>
+  </div>
+
+  <div class="pattern-section">
+    <h2>9. Builder Pattern</h2>
+    <p class="description">
+      Constructs complex objects step by step with a fluent interface.
+    </p>
+    <div class="result">
+      <p>{{ builderResult }}</p>
+    </div>
+  </div>
+
+  <div class="pattern-section">
+    <h2>10. Proxy Pattern</h2>
+    <p class="description">
+      Controls access to objects, often used for caching or lazy loading.
+    </p>
+    <div class="result">
+      <p *ngFor="let result of proxyResults">{{ result }}</p>
+      <p class="note">Check browser console for caching behavior</p>
+    </div>
+  </div>
+</div>

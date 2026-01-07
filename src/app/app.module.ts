@@ -7,6 +7,7 @@ import {AppComponent} from './app.component';
 import {XxxAlertModule, XxxErrorHandlerModule, XxxLogModule, XxxMessageModule} from '@app/xxx-common';
 import {XxxHeaderModule} from '@app/modules/xxx-header/xxx-header.module';
 import {XxxCommentsModule} from '@app/modules/xxx-comments/xxx-comments.module';
+import {DesignPatternsModule} from '@app/modules/design-patterns/design-patterns.module';
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -17,6 +18,7 @@ import {XxxCommentsModule} from '@app/modules/xxx-comments/xxx-comments.module';
     MatProgressSpinnerModule,
     XxxAlertModule,
     XxxCommentsModule,
+    DesignPatternsModule,
     XxxErrorHandlerModule,
     XxxHeaderModule,
     XxxLogModule,
